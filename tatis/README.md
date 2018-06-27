@@ -7,9 +7,5 @@ Archivos de ...
 
 | Directorio | Descripcion |  Fecha Creacion 
 | ------ | ------ |  ----
-| Dropbox | [plugins/dropbox/README.md][PlDb] | --
-| Github | [plugins/github/README.md][PlGh] | ---
-| Google Drive | [plugins/googledrive/README.md][PlGd] | ---
-| OneDrive | [plugins/onedrive/README.md][PlOd] | --
-| Medium | [plugins/medium/README.md][PlMe] | ---
-| Google Analytics | [plugins/googleanalytics/README.md][PlGa] | ---
+| 1functions | Carpeta de Ejercicios en Funciones Javascript IIFE, Arrow Functions, y Ejemplos For | 25 Junio 2018
+| Excercises | Ejercicios Exámen | 26 Junio 2018
