@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+      <meta charset="utf-8">
+      <title>Barra de Progreso Tatis</title>
+      <link rel="import" href="candy-progress.html">
+      <style is="custom-style">
+          candy-progress {
+              --candy-progress-width: 100%;
+              --candy-progress-height: 20px;
+          }
+          candy-progress.red {
+              --candy-progress-color: #D64669;
+              --candy-progress-secondary-color: #D64669;
+          }
+          candy-progress.green {
+              --candy-progress-color: #F08080;
+              --candy-progress-secondary-color: #F08080;
+          }
+          candy-progress.orange {
+              --candy-progress-color: #D64669;
+              --candy-progress-secondary-color: #815985;
+          }
+          candy-progress.blue {
+              --candy-progress-color: #2E86C1;
+              --candy-progress-secondary-color: white;
+          }
+      </style>
+
+    </head>
+    <body>
+      <h2>Barra de Progreso Tatis</h2>
+      <candy-progress class="red" speed="35" fill></candy-progress>
+      <!-- <candy-progress class="green" speed="70" loop></candy-progress>
+      <candy-progress class="orange" loop></candy-progress>
+      <candy-progress class="blue" progress="90"></candy-progress> -->
+    </body>
+</html>
