@@ -1,0 +1,80 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="./juego-opcion.html">
+
+<dom-module id="juego-element-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+        background-color: #a0a7b2;
+      }
+    </style>
+    <h2>Marcador </h2>
+    <p>Jugador 1-[[marcador1]]
+    Jugador 2-[[marcador2]]</p>
+
+<hr>
+    <template is="dom-repeat" items="[[opciones1]]"  >
+      <juego-opcion
+      opcion="[[item.name]]"
+      icono=[[item.icon]]
+      num=[[index]]
+      on-suma="sumaMarcador"></juego-opcion>
+    </template>
+
+    <b>Resultado:</b> <input type="label" value="[[mensaje]]">
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class JuegoElementApp extends Polymer.Element {
+      static get is() { return 'juego-element-app'; }
+      static get properties() {
+        return {
+          mensaje : {
+            type:String
+          },
+          marcador1: {
+            type: Number,
+            value: 0
+          },
+          marcador2: {
+            type: Number,
+            value: 0
+          },
+          opciones1:{
+              type : Array,
+              value(){
+                         return  [
+                                {name: 'Piedra', icon:'icons:cloud'},
+                                {name: 'Papel',icon:'icons:content-copy'},
+                                {name: 'Tijera',icon:'icons:content-cut'}
+                              ];
+
+                      }
+              }
+        };
+      }
+
+      sumaMarcador(e){
+          this.mensaje = '';
+          this.mensaje = e.detail.msj;
+
+           if(e.detail.numJugador === 1){
+             this.marcador1 += 1;
+           }else{
+             this.marcador2 += 1;
+           }
+
+
+      }
+    }
+
+    window.customElements.define(JuegoElementApp.is, JuegoElementApp);
+  </script>
+</dom-module>

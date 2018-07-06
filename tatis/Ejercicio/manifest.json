@@ -1,0 +1,6 @@
+{
+  "name": "juego-element",
+  "short_name": "juego-element",
+  "start_url": "/",
+  "display": "standalone"
+}
