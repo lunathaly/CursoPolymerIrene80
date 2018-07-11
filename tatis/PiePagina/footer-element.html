@@ -1,0 +1,86 @@
+<link rel="import" href="../polymer/polymer-element.html">
+<link rel="import" href="../polymer/lib/elements/dom-repeat.html">
+<link rel="import" href="./footer-images.html">
+
+<dom-module id="footer-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .grid-container {
+         display: grid;
+        grid-template-columns:150px repeat(auto-fill, 150px) 250px;
+        /*150px repeat(auto-fill, 150px) 250px; /*repeat(3, 200px); */
+        padding: 5px;
+      }
+
+      .grid-item {
+        padding: 5px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        .grid-container {
+          display: grid;
+          grid-template-columns: fit-content(90%);
+        }
+
+      }
+    </style>
+    <h2>Footer Tatis</h2>
+    <div class="grid-container">
+          <template is="dom-repeat" items="[[footer]]">
+            <div class="grid-item">
+                      <footer-images
+                      imagen="[[item.imagen]]"
+                      descripcion ="[[item.descripcion]]"
+                      ></footer-images>
+              </div>
+            </template>
+      </div>
+  </template>
+
+  <script>
+    /**
+     * `footer-element`
+     *
+     *
+     * @customElement
+     * @polymer
+     * @demo demo/index.html
+     */
+    class FooterElement extends Polymer.Element {
+      static get is() { return 'footer-element'; }
+      static get properties() {
+        return {
+          footer: {
+            type: Array,
+            value: function(){
+              return [
+                 {imagen: '../imgs/images_aerial_3.jpg' ,
+                 descripcion: 'La Danza Aérea (acrobacia en tela o gimnasia aérea) es resultado de un proceso de ..'
+               },
+               { imagen :  '../imgs/images_aerial_5.jpg' ,
+                 descripcion: 'La Tela Acrobática (también conocida como: Danza Aérea, Ballet Aéreo, Tissue, Tela y otros) es una modalidad de práctica circense del grupo de los ejercicios .'
+               },
+                 { imagen : '../imgs/images_aerial_6.jpg' ,
+                 descripcion: 'Un trapecista es un artista de circo que realiza acrobacias sobre el trapecio. Los trapecistas constituyen una de las actuaciones clásicas del circo e incluidas ...'
+               },
+                 { imagen : '../imgs/images_aerial_1.jpg' ,
+                 descripcion: ' La danza aérea es la fusión o combinación de la danza contemporánea con .... muy interesante tu informacion, seria genial poder hacer eso.'
+               },
+                 { imagen : '../imgs/images_aerial_2.jpg' ,
+                 descripcion: ' El concepto de danza proviene del francés antiguo dancier. Se entiende por danza como un arte, donde se realiza una...'
+               }
+               ]
+            }
+          }
+        };
+      }
+    }
+
+    window.customElements.define(FooterElement.is, FooterElement);
+  </script>
+</dom-module>
