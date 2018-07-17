@@ -1,0 +1,76 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<link rel="import" href="./card-element.html">
+
+<dom-module id="directorio-element-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .grid-container {
+       display: grid;
+        grid-template-columns:auto auto auto;
+        padding: 5px;
+
+      }
+      .grid-item {
+        padding: 5px;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        .grid-container {
+          display: grid;
+          grid-template-columns: fit-content(90%);
+        }
+    </style>
+    <h2>Hello [[prop1]]!</h2>
+
+
+    <iron-ajax
+    auto
+    url="http://localhost:3000/users"
+    params=''
+    handle-as="json"
+    debounce-duration="300"
+    last-response="{{ajaxResponse}}"></iron-ajax>
+    <div class="grid-container">
+    <template is="dom-repeat" items="[[ajaxResponse]]">
+
+              <card-element
+              nombre="[[item.Nombre]]"
+              apellido="[[item.Apellido]]"
+              direccion="[[item.Direccion]]"
+              telefono="[[item.Telefono]]"
+              foto="[[item.Foto]]"
+              edad="[[item.Edad]]"
+              puesto="[[item.Puesto]]"
+              genero="[[item.Genero]]"></card-element>
+
+
+   </template>
+   </div>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class DirectorioElementApp extends Polymer.Element {
+      static get is() { return 'directorio-element-app'; }
+      static get properties() {
+        return {
+          nombre: {
+            type: String,
+            value: ''
+          }
+        };
+      }
+    }
+
+    window.customElements.define(DirectorioElementApp.is, DirectorioElementApp);
+  </script>
+</dom-module>

@@ -1,0 +1,110 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../../bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="../../bower_components/iron-icons/iron-icons.html">
+
+<dom-module id="card-element">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .rate-image {
+        position: absolute;
+        top: 0;
+        right: 0px;
+        left: 5px;
+        bottom: 0;
+        width: 100px;
+        background-size: cover;
+        float: left;
+      }
+      .rate-header {
+        color: #b049b7;
+        font-family: Verdana;
+        font-size: 18px;
+        font-weight: bold;
+
+
+      }
+      .rate-dir {
+        color: #716372;
+        font-family: Verdana;
+        font-size: 12px;
+        font-weight: normal;
+        font-style: normal;
+
+      }
+      .rate-name { color: #19202d; margin: 10px 0; }
+      .card-content {
+        font-family: Verdana;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+        color: #efe8f2;
+
+        text-indent:15px;
+        padding: 5px;
+        text-align: right;
+        width:350px;
+        background-color: #ced4dd;
+        float: left;
+
+      }
+
+      #detail {
+        border:1;
+        padding: 15px;
+        text-align: center;
+        font-family: Verdana;
+        font-size: 16px;
+        font-weight: normal;
+        font-style: normal;
+
+      }
+    </style>
+    <paper-card class="rate" on-click="toggle">
+  <div class="card-content">
+    <div class="rate-header">[[nombre]]</div>
+    <div class="rate-name">[[apellido]]</div>
+    <div class="rate-dir">[[direccion]]</div>
+  </div>
+
+  <div class="rate-image" style="background-image: url( '../../img/[[foto]]');"><iron-icon icon="icons:add" style="fill:gray"></iron-icon></div>
+</paper-card>
+
+
+<div id="detail" hidden="[[bandera]]" >
+  <p>Edad : [[edad]]</p>
+  <p>Puesto : [[puesto]]</p>
+  <p>Genero : [[genero]]</p>
+
+</div>
+
+
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class CardElement extends Polymer.Element {
+      static get is() { return 'card-element'; }
+      static get properties() {
+        return {
+          bandera: {
+            type: Boolean,
+            value: true
+          }
+        };
+      }
+
+      toggle() {
+            this.bandera = !this.bandera;
+          }
+    }
+
+    window.customElements.define(CardElement.is, CardElement);
+  </script>
+</dom-module>

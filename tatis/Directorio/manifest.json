@@ -1,0 +1,6 @@
+{
+  "name": "directorio-element",
+  "short_name": "directorio-element",
+  "start_url": "/",
+  "display": "standalone"
+}

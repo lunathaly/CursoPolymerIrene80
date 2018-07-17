@@ -1,0 +1,12 @@
+{
+  "users": [
+    { "id": 1, "Nombre": "Miguel", "Apellido": "Sanchez",  "Telefono": "219-839-2819", "Direccion": "Av Nuevo Leon 255 Col Hipodromo Condesa", "Foto":"mujer2.png", "Edad":"22", "Puesto":"Vendedor", "Genero":"M" },
+	{ "id": 2, "Nombre": "Tatiana", "Apellido": "De la Serna",  "Telefono": "219-839-2819" , "Direccion": "Calle Tepic 22 Col Roma Cuahtemoc", "Foto":"avatar.png", "Edad":"35", "Puesto":"Maestra", "Genero":"H"},
+	{ "id": 3, "Nombre": "Fernando", "Apellido": "Martinez",  "Telefono": "219-839-2819" , "Direccion": "Av Alvaron Obregon 1066 Col Roma", "Foto":"otro.png", "Edad":"33", "Puesto":"Cajero", "Genero":"M"},
+	{ "id": 3, "Nombre": "Aura", "Apellido": "Alarcon",  "Telefono": "219-839-2819" , "Direccion": "Av Reforma 255 Col Cuauhtemoc", "Foto":"iron-man.png", "Edad":"19", "Puesto":"Trader", "Genero":"M"},
+	{ "id": 3, "Nombre": "Valeria", "Apellido": "Zambrano",  "Telefono": "784378738-33" , "Direccion": "Eugenia 300 Col Lazaro Cardednas", "Foto":"arabic.png", "Edad":"24", "Puesto":"Programador", "Genero":"M"},
+	{ "id": 3, "Nombre": "Humberto", "Apellido": "Arias",  "Telefono": "219-839-2819" , "Direccion": "Regina 119 Col Centro", "Foto":"hombre.png", "Edad":"19", "Puesto":"Electricista", "Genero":"H"}
+	
+	
+  ]
+}
